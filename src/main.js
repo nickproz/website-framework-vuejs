@@ -14,7 +14,7 @@ Vue.use(vuex)
 Vue.config.productionTip = false
 
 // Use axios for all http requests
-Vue.prototype.$http = axios;
+Vue.prototype.$http = axios
 
 /* eslint-disable no-new */
 new Vue({
