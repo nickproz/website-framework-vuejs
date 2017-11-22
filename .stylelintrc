@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": [
+    "./node_modules/**/*.css",
+    "./node_modules/**/*.less"
+  ],
+  "rules": {
+    "rule-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "indentation": null
+  }
+}
