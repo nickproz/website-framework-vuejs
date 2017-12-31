@@ -1,8 +1,14 @@
 /**
  * Semantic (UI framework)
  */
-require('../node_modules/semantic-ui/dist/semantic.min.css')
+// require('../node_modules/semantic-ui/dist/semantic.min.css')
 // require('../node_modules/semantic-ui/dist/semantic.js')
+
+/**
+ * Vuetify (UI framework)
+ */
+require('../node_modules/vuetify/dist/vuetify.css')
+require('../node_modules/vuetify/dist/vuetify.js')
 
 /**
  * Slick (carousel/slider)

@@ -6,12 +6,16 @@ import router from './router/index'
 import axios from 'axios'
 import vuex from 'vuex'
 import store from './store'
+import Vuetify from 'vuetify'
 
 // Require our third party vendor files
 require('./vendor.js')
 
 Vue.use(vuex)
 Vue.config.productionTip = false
+
+// Vuetify front-end framework
+Vue.use(Vuetify)
 
 // Use axios for all http requests
 Vue.prototype.$http = axios
