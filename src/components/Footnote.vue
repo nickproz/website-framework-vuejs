@@ -5,30 +5,30 @@
 </template>
 
 <script>
-  export default {
+export default {
     name: 'footnote'
-  }
+};
 </script>
 
 <style lang="less" scoped>
-  @import '../style/mixins';
+@import '../style/mixins';
 
-  .footnote {
+.footnote {
     .card();
     display: flex;
     align-items: center;
     justify-content: center;
 
     .content {
-      margin: 0;
-      padding: 15px;
+        margin: 0;
+        padding: 15px;
     }
     .website-link {
-      text-decoration: none;
+        text-decoration: none;
 
-      &:hover {
-        text-decoration: underline;
-      }
+        &:hover {
+            text-decoration: underline;
+        }
     }
-  }
+}
 </style>

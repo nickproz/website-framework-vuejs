@@ -9,22 +9,22 @@
 </template>
 
 <script>
-import Navigation from './components/Navigation.vue'
-import Footnote from './components/Footnote.vue'
+import Navigation from './components/Navigation.vue';
+import Footnote from './components/Footnote.vue';
 
 export default {
-  name: 'app',
-  components: {
-    Navigation,
-    Footnote
-  }
-}
+    name: 'app',
+    components: {
+        Navigation,
+        Footnote
+    }
+};
 </script>
 
 <style lang="less">
-  @import './style/variables';
+@import './style/variables';
 
-  #app {
+#app {
     font-family: @body-font--serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -35,17 +35,17 @@ export default {
     width: 100%;
 
     a {
-      color: @indigo-color-theme--primary;
+        color: @indigo-color-theme--primary;
     }
     img {
-      max-width: 100%;
-      height: auto;
+        max-width: 100%;
+        height: auto;
     }
-  }
-  .main-content {
+}
+.main-content {
     display: flex;
     flex: 1 0 auto;
     align-items: center;
     justify-content: center;
-  }
+}
 </style>

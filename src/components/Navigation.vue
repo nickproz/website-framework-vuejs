@@ -10,33 +10,33 @@
 </template>
 
 <script>
-import * as routes from '../util/constants/routes'
+import * as routes from '../util/constants/routes';
 
 export default {
-  name: 'menu',
-  methods: {
-    /**
-     * Navigate to the
-     *
-     * @param redirect
-     */
-    navigate (redirect) {
-      this.$router.push(redirect)
+    name: 'menu',
+    methods: {
+        /**
+         * Navigate to the
+         *
+         * @param redirect
+         */
+        navigate(redirect) {
+            this.$router.push(redirect);
+        }
+    },
+    data() {
+        return {
+            routes: routes
+        };
     }
-  },
-  data () {
-    return {
-      routes: routes
-    }
-  }
-}
+};
 </script>
 
 <style lang="less" scoped>
-  @import '../style/mixins';
+@import '../style/mixins';
 
-  .navigation {
+.navigation {
     background-color: white;
     .card();
-  }
+}
 </style>

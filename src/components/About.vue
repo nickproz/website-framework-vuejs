@@ -5,13 +5,12 @@
 </template>
 
 <script>
-  export default {
+export default {
     name: 'about'
-  }
+};
 </script>
 
 <style lang="less" scoped>
-  .about {
-
-  }
+.about {
+}
 </style>

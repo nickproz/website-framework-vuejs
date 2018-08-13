@@ -15,31 +15,31 @@
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex';
 
-  import * as spreadsheetActions from '../store/modules/spreadsheet/action-types'
+import * as spreadsheetActions from '../store/modules/spreadsheet/action-types';
 
-  export default {
+export default {
     name: 'home',
     computed: {
-      ...mapGetters(['musicEvents', 'musicEventsFetched'])
+        ...mapGetters(['musicEvents', 'musicEventsFetched'])
     },
     methods: {
-      ...mapActions({
-        getMusicEvents: spreadsheetActions.GET_SPREADSHEET_EVENTS
-      })
+        ...mapActions({
+            getMusicEvents: spreadsheetActions.GET_SPREADSHEET_EVENTS
+        })
     },
     /**
      * Fetch our events on startup.
      */
-    created () {
-      this.getMusicEvents()
+    created() {
+        this.getMusicEvents();
     }
-  }
+};
 </script>
 
 <style lang="less" scoped>
-  .home {
+.home {
     flex-direction: column;
-  }
+}
 </style>

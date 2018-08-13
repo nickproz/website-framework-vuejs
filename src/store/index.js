@@ -1,32 +1,31 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-import VuexPersist from 'vuex-persist'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import VuexPersist from 'vuex-persist';
 
-import spreadsheet from './modules/spreadsheet'
+import spreadsheet from './modules/spreadsheet';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-const debug = process.env.NODE_ENV !== 'production'
+const debug = process.env.NODE_ENV !== 'production';
 
-const mutationsToIgnore = []
+const mutationsToIgnore = [];
 const vuexLocalStorage = new VuexPersist({
-  // The key to store the state on in the storage provider
-  key: 'vuex',
-  // This can also be window.sessionStorage or localForage
-  storage: window.localStorage,
+    // The key to store the state on in the storage provider
+    key: 'vuex',
+    // This can also be window.sessionStorage or localForage
+    storage: window.localStorage,
 
-  // Passes the state and returns the state with only the objects (modules) you want to store
-  reducer: state => ({
-  }),
+    // Passes the state and returns the state with only the objects (modules) you want to store
+    reducer: (state) => ({}),
 
-  // Filters out all mutations that are in mutations to ignore
-  filter: mutation => (mutationsToIgnore.indexOf(mutation.type) === -1)
-})
+    // Filters out all mutations that are in mutations to ignore
+    filter: (mutation) => mutationsToIgnore.indexOf(mutation.type) === -1
+});
 
 export default new Vuex.Store({
-  modules: {
-    spreadsheet
-  },
-  strict: debug,
-  plugins: [vuexLocalStorage.plugin]
-})
+    modules: {
+        spreadsheet
+    },
+    strict: debug,
+    plugins: [vuexLocalStorage.plugin]
+});
