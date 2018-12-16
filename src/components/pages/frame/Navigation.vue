@@ -1,11 +1,8 @@
 <template>
   <v-card>
-    <v-tabs fixed centered class="navigation">
+    <v-tabs fixed centered class="navigation" v-model="activeTabId">
       <v-tabs-bar>
-        <v-tabs-slider class="indigo darken-1"></v-tabs-slider>
-        <v-tabs-item href="#home"     @click="navigate(routes.HOME_ROUTE)">Home</v-tabs-item>
-        <v-tabs-item href="#about"    @click="navigate(routes.ABOUT_ROUTE)">About</v-tabs-item>
-        <v-tabs-item href="#contact"  @click="navigate(routes.CONTACT_ROUTE)">Contact</v-tabs-item>
+        <v-tabs-item v-for="tab in tabs" :key="tab.id" :href="tab.link" @click="navigate(tab.route)">{{tab.name}}</v-tabs-item>
       </v-tabs-bar>
     </v-tabs>
   </v-card>
@@ -13,6 +10,13 @@
 
 <script>
 import * as routes from '../../../util/constants/routes';
+
+// Tab navigation data
+const tabs = [
+  { id: 0, name: 'Home', link: '#home', route: routes.HOME_ROUTE },
+  { id: 1, name: 'About', link: '#about', route: routes.ABOUT_ROUTE },
+  { id: 2, name: 'Contact', link: '#contact', route: routes.CONTACT_ROUTE }
+];
 
 /**
  * Component for the navigation menu.
@@ -22,7 +26,10 @@ export default {
 
   data() {
     return {
-      routes: routes
+      // The tabs to render
+      tabs: tabs,
+      // The ID of the active tab
+      activeTabId: null
     };
   },
   methods: {
@@ -32,8 +39,12 @@ export default {
        * @param redirect
        */
       navigate(redirect) {
-          this.$router.push(redirect);
+        this.$router.push(redirect);
       }
+  },
+  created() {
+    // Update the active tab to be the current path
+    this.activeTabId = this.$route.path.replace('/', '');
   }
 };
 </script>
