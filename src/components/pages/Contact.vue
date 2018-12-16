@@ -5,12 +5,14 @@
 </template>
 
 <script>
-export default {
-    name: 'contact'
-};
+  /**
+   * Component for the contact page.
+   */
+  export default {
+      name: 'contact'
+  };
 </script>
 
 <style lang="less" scoped>
-.contact {
-}
+  .contact {}
 </style>

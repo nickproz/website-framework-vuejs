@@ -1,21 +1,36 @@
 @import './breakpoints';
 
-// Cards
-.vuetify-card() {
-    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0px rgba(0, 0, 0, 0.14), 0 1px 3px 0px rgba(0, 0, 0, 0.12);
-    border-radius: 2px;
-    background-color: white;
-}
+// Inputs
+.input() {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  padding-top: 0;
 
-.semantic-card() {
-    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
-    border-radius: 4/16rem;
-    background-color: white;
-}
+  input, .input-group__selections__comma {
+    font-size: 14px;
+  }
 
-.card() {
-    .vuetify-card();
-    //.semantic-card();
+  ::-webkit-input-placeholder {
+    font-style: italic;
+  }
+
+  .input-group {
+    padding-top: 0;
+  }
+
+  .input-group__input {
+    align-items: center;
+    min-height: unset;
+
+    // Needed to override 16px padding for date picker input
+    padding: 10px !important;
+  }
+
+  // Hide the input underline
+  .input-group__details {
+    display: none;
+  }
 }
 
 // Containers
