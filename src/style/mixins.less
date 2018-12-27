@@ -2,35 +2,36 @@
 
 // Inputs
 .input() {
-  border: 1px solid #eee;
-  border-radius: 3px;
-  margin-bottom: 20px;
-  padding-top: 0;
-
-  input, .input-group__selections__comma {
-    font-size: 14px;
-  }
-
-  ::-webkit-input-placeholder {
-    font-style: italic;
-  }
-
-  .input-group {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    margin-bottom: 20px;
     padding-top: 0;
-  }
 
-  .input-group__input {
-    align-items: center;
-    min-height: unset;
+    input,
+    .input-group__selections__comma {
+        font-size: 14px;
+    }
 
-    // Needed to override 16px padding for date picker input
-    padding: 10px !important;
-  }
+    ::-webkit-input-placeholder {
+        font-style: italic;
+    }
 
-  // Hide the input underline
-  .input-group__details {
-    display: none;
-  }
+    .input-group {
+        padding-top: 0;
+    }
+
+    .input-group__input {
+        align-items: center;
+        min-height: unset;
+
+        // Needed to override 16px padding for date picker input
+        padding: 10px !important;
+    }
+
+    // Hide the input underline
+    .input-group__details {
+        display: none;
+    }
 }
 
 // Containers

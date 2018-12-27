@@ -16,9 +16,9 @@ Vue.config.productionTip = false;
 
 // Vuetify front-end framework
 Vue.use(Vuetify, {
-  theme: {
-    theme: '#9370d8'
-  }
+    theme: {
+        theme: '#9370d8'
+    }
 });
 
 // Use axios for all http requests

@@ -1,8 +1,8 @@
 {
-  "name": "my-project",
+  "name": "lash-group-project-mars",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Nick Prozorovsky <nick.prozorovsky@vodori.com>",
+  "description": "A Lash Group App.",
+  "author": "Vodori, Inc.",
   "private": true,
   "scripts": {
     "dev": "npm start",

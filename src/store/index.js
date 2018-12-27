@@ -2,8 +2,6 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexPersist from 'vuex-persist';
 
-import spreadsheet from './modules/spreadsheet';
-
 Vue.use(Vuex);
 
 const debug = process.env.NODE_ENV !== 'production';
@@ -23,9 +21,7 @@ const vuexLocalStorage = new VuexPersist({
 });
 
 export default new Vuex.Store({
-    modules: {
-        spreadsheet
-    },
+    modules: {},
     strict: debug,
     plugins: [vuexLocalStorage.plugin]
 });
