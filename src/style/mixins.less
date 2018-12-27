@@ -2,14 +2,27 @@
 
 // Inputs
 .input() {
-    border: 1px solid #eee;
-    border-radius: 3px;
-    margin-bottom: 20px;
+
+    margin-bottom: 10px;
     padding-top: 0;
 
+    .input-group__input {
+      // Important needed to override blue primary outline on focus
+      border: 1px solid #eee !important;
+      border-radius: 3px;
+    }
+
+    // Set all inputs to the same height and ensure their contents are vertically centered
     input,
     .input-group__selections__comma {
         font-size: 14px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-group--select__autocomplete {
+        padding: 0;
     }
 
     ::-webkit-input-placeholder {
@@ -28,23 +41,29 @@
         padding: 10px !important;
     }
 
-    // Hide the input underline
     .input-group__details {
+      // The error messages shouldn't take up space if they aren't present
+      min-height: 0;
+      padding: 0;
+
+      // Hide the input underline
+      &:before, &:after {
         display: none;
+      }
+    }
+
+    .input-group__messages {
+      margin: 5px 0;
     }
 }
 
 // Containers
 .container-inner {
     margin: 0 auto;
-    padding: 30px 0;
+    padding: 0;
     width: 90%;
 
-    @media @break-tablet-portrait {
-        width: 75%;
-    }
-
-    @media @break-desktop {
-        width: 50%;
+    @media @break-mobile {
+      padding: 30px 0;
     }
 }

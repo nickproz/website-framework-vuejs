@@ -27,6 +27,10 @@ module.exports = {
       // allow async-await
       'generator-star-spacing': 0,
       // allow debugger during development
-      'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+      'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+      // Sets indent spacing to 4 by default instead of 2
+      "indent": ["error", 4],
+      // Disables an error for adding a semi-colon after all lines
+      "semi": 0
   }
 };

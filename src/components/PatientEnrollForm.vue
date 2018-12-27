@@ -1,11 +1,12 @@
 <template>
-    <div class="patient-enroll-form">
+    <v-form class="patient-enroll-form" v-model="valid" ref="form">
         <v-card class="form-card" @keydown.enter="submit()">
             <!-- Name of patient -->
             <text-input
               v-model="name"
               label="Name of patient"
               placeholder="First and last name"
+              :rules="generateRequiredFieldValidationRules(`Name is required.`)"
             ></text-input>
 
             <!-- Date of birth -->
@@ -13,6 +14,7 @@
               v-model="dateOfBirth"
               color="theme"
               label="Date of birth"
+              :rules="generateRequiredFieldValidationRules(`Date of birth is required.`)"
             ></date-picker-input>
 
             <!-- Insurance name -->
@@ -22,6 +24,7 @@
                 placeholder="Select insurance"
                 label="Insurance name"
                 :items="insuranceNameDropdownItems"
+                :rules="generateRequiredFieldValidationRules(`Insurance is required.`)"
             ></dropdown-input>
 
             <!-- Insurance information -->
@@ -32,6 +35,7 @@
                   v-model="groupNumber"
                   label="Group no."
                   placeholder="Enter group number"
+                  :rules="generateRequiredFieldValidationRules(`Group number is required.`)"
                 ></text-input>
 
                 <!-- ID number -->
@@ -40,6 +44,7 @@
                   v-model="idNumber"
                   label="ID no."
                   placeholder="Enter id number"
+                  :rules="generateRequiredFieldValidationRules(`ID number is required.`)"
                 ></text-input>
             </div>
 
@@ -48,12 +53,13 @@
               v-model="diagnosis"
               label="Diagnosis"
               placeholder="Enter diagnosis code"
+              :rules="generateRequiredFieldValidationRules(`Diagnosis code is required.`)"
             ></text-input>
 
             <!-- Submit button -->
             <v-btn depressed large color="theme" @click="submit()" class="submit-button">Next</v-btn>
         </v-card>
-    </div>
+    </v-form>
 </template>
 
 <script>
@@ -83,25 +89,48 @@ export default {
     data() {
         return {
             // Name of the person
-            name: null,
+            name: '',
             // Date of birth
-            dateOfBirth: null,
+            dateOfBirth: '',
             // Insurance name
-            insuranceName: null,
+            insuranceName: '',
             // Insurance group number
-            groupNumber: null,
+            groupNumber: '',
             // Insurance ID number
-            idNumber: null,
+            idNumber: '',
             // Diagnosis code
-            diagnosis: null,
+            diagnosis: '',
             // Insurance name dropdown items
-            insuranceNameDropdownItems: insuranceNameDropdownItems
+            insuranceNameDropdownItems: insuranceNameDropdownItems,
+            // Whether or not the form is valid
+            valid: false
         };
     },
 
     methods: {
+        /**
+         * Submits the form if the form is valid.
+         */
         submit() {
-            alert('Form submitted!');
+          // Validate the form
+          if (this.$refs.form.validate()) {
+                console.log('The form is valid!');
+          } else {
+                console.log('The form is invalid.');
+          }
+        },
+
+        /**
+         * Generates a validation rules object using the error message passed in for a simple
+         * required field.
+         *
+         * @param errorMessage - the error message to render if the validation is not met
+         * @returns validation object
+         */
+        generateRequiredFieldValidationRules(errorMessage) {
+            return [
+                v => !!v || errorMessage
+            ]
         }
     }
 };
@@ -114,7 +143,7 @@ export default {
     @inline-input-spacing: 10px;
 
     .form-card {
-        padding: 15px 50px;
+        padding: 25px 50px;
     }
 
     .insurance-container {
@@ -122,7 +151,7 @@ export default {
     }
 
     .insurance-input {
-        flex-grow: 1;
+        flex: 1;
 
         &:first-child {
             margin-right: @inline-input-spacing;

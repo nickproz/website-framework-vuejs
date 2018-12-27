@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  @import "../../style/mixins.less";
+
 .about {
+  .container-inner();
 }
 </style>

@@ -22,7 +22,7 @@ const tabs = [
  * Component for the navigation menu.
  */
 export default {
-    name: 'menu',
+    name: 'navigation',
 
     data() {
         return {

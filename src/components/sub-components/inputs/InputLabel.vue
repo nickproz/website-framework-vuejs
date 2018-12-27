@@ -12,7 +12,7 @@ export default {
         // The label text to render
         label: {
             type: String,
-            default: null
+            required: true
         }
     }
 };

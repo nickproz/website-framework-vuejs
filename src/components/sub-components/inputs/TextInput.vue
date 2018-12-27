@@ -4,6 +4,7 @@
         <v-text-field
             class="text-field"
             box
+            :rules="rules"
             :appendIcon="appendIcon"
             :placeholder="placeholder"
             :value="value"
@@ -26,22 +27,32 @@ export default {
         // The value of the text input
         value: {
             type: String,
-            default: ''
+            default: '',
+            required: false
         },
         // The placeholder to show when there is no input
         placeholder: {
             type: String,
-            default: ''
+            default: '',
+            required: false
         },
         // The icon to add to the end of the input field, if one is provided
         appendIcon: {
             type: String,
-            default: null
+            default: null,
+            required: false
         },
         // The label to render above the input, if one is provided
         label: {
             type: String,
-            default: null
+            default: null,
+            required: false
+        },
+        // The validation rules for the text field, if it is required. Defaults to no validation
+        rules: {
+            type: Array,
+            default: () => [ () => true],
+            required: false
         }
     },
 

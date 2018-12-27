@@ -25,22 +25,25 @@ export default {
         // The items to show in the dropdown
         items: {
             type: Array,
-            default: []
+            required: true
         },
-        // The placeholder to show when there is no input.
+        // The placeholder to show when there is no input
         placeholder: {
             type: String,
-            default: ''
+            default: '',
+            required: false
         },
         // The color of the dropdown icon
         color: {
             type: String,
-            default: null
+            default: null,
+            required: false
         },
         // The label to render above the input, if one is provided
         label: {
             type: String,
-            default: null
+            default: null,
+            required: false
         }
     }
 };

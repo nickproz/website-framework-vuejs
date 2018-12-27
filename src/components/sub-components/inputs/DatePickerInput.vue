@@ -7,6 +7,7 @@
               v-model="dateFormatted"
               placeholder="MM/DD/YYYY"
               appendIcon="event"
+              :rules="rules"
               :label="label"></text-input>
 
             <!-- Date picker popup -->
@@ -39,12 +40,20 @@ export default {
         // The color highlights for the date picker
         color: {
             type: String,
-            default: null
+            default: null,
+            required: false
         },
-        // The label to render above the input
+        // The label to render above the input, if one is provided
         label: {
             type: String,
-            default: ''
+            default: '',
+            required: false
+        },
+        // The validation rules for the text field, if it is required. Defaults to no validation
+        rules: {
+            type: Array,
+            default: () => [],
+            required: false
         }
     },
 
